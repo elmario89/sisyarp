@@ -15,6 +15,17 @@ namespace test
             grades.Add(grade);
         }
 
+        public void GenerateRandomGrades()
+        {
+            int counter = 0;
+            do
+            {
+                Random number = new Random();
+                AddGrade(((float)(number.NextDouble() * (100 - 0) + 0)));
+                counter++;
+            } while (counter < 100);
+        }
+
         public GradeStatistics ComputeStatistics()
         {
             GradeStatistics stats = new GradeStatistics();
@@ -29,6 +40,7 @@ namespace test
             }
 
             stats.averageGrade = sum / grades.Count;
+            stats.count = grades.Count;
 
             return stats;
         }

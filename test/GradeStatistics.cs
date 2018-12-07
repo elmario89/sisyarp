@@ -15,5 +15,6 @@ namespace test
         public float averageGrade;
         public float highestGrade;
         public float lowestGrade;
+        public int count;
     }
 }
